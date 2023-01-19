@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 7600
 
 app.use("/sign",signup)
 
+app.get("/",(req,res)=>{
+
+    res.send({"msg":"welcome to eavl"})
+})
 
 app.listen(PORT,async ()=>{
 try{
