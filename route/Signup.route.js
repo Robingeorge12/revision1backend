@@ -9,6 +9,7 @@ signup.post("/", async (req, res) => {
     const { email, password } = req.body
     console.log(email, password)
     const check = await UserData.findOne({ email: email })
+    console.log(check)
     if (check) {
         res.send({ msg: "user already exist" })
 
@@ -20,19 +21,21 @@ signup.post("/", async (req, res) => {
                 res.send({ msg: "signup has some error occured" })
             } else {
 
-                const new_userData = UserData({
+                const new_userData = new UserData({
                     email,
                     password: hash_pass
                 })
-            }
-
-            try {
-
                 await new_userData.save()
                 res.send({ msg: "signup sucess" })
-            } catch (er) {
-                res.send({ msg: "signup has some error" })
+                // try {
+                //     await new_userData.save()
+                //     res.send({ msg: "signup sucess" })
+                // } catch (er) {
+                //     res.send({ msg: "signup error" })
+                // }
             }
+
+
 
         });
 

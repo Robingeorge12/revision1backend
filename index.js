@@ -11,6 +11,7 @@ app.use(express.json())
 const PORT = process.env.PORT || 7600 
 
 app.use("/sign",signup)
+app.use("/login",login)
 
 app.get("/",(req,res)=>{
 
