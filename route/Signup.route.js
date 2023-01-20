@@ -25,14 +25,14 @@ signup.post("/", async (req, res) => {
                     email,
                     password: hash_pass
                 })
-                await new_userData.save()
-                res.send({ msg: "signup sucess" })
-                // try {
-                //     await new_userData.save()
-                //     res.send({ msg: "signup sucess" })
-                // } catch (er) {
-                //     res.send({ msg: "signup error" })
-                // }
+                // await new_userData.save()
+                // res.send({ msg: "signup sucess" })
+                try {
+                    await new_userData.save()
+                    res.send({ msg: "signup sucess" })
+                } catch (er) {
+                    res.send({ msg: "signup error" })
+                }
             }
 
 

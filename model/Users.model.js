@@ -7,6 +7,6 @@ const UserShema = new mongoose.Schema({
 
 })
 
-const UserData = mongoose.model("user",UserShema)
+const UserData = mongoose.model("users",UserShema)
 
 module.exports = {UserData}
