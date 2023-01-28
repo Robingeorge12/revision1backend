@@ -7,4 +7,4 @@ bugs.get("/",auth,(req,res)=>{
     res.status("200").send("welcome")
 })
 
-module.exports = {bugs}
+module.exports = bugs

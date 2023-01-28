@@ -43,4 +43,4 @@ signup.post("/", async (req, res) => {
 
 
 })
-module.exports = { signup }
+module.exports = signup 
